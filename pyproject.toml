@@ -1,0 +1,23 @@
+[project]
+name = "sistema-bancario"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "sthefanypereira",email = "sthefanypereira521@gmail.com"}
+]
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard] (>=0.47.0,<0.48.0)",
+    "python-dotenv (>=1.2.2,<2.0.0)",
+    "python-jose (>=3.5.0,<4.0.0)",
+    "passlib (>=1.7.4,<2.0.0)",
+    "bcrypt (==4.0.1)",
+    "python-multipart (>=0.0.29,<0.0.30)",
+    "jinja2 (>=3.1.6,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
