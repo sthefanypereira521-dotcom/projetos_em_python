@@ -65,4 +65,4 @@ Obtenha o token na rota  POST /auth/token com email e senha.
 
 ***Sthefany***  
 Desenvolvedora Backend em formação  
-[GitHub](https://github.com/seu-usuario) • [LinkedIn](https://linkedin.com/in/seu-perfil)
+[GitHub](https://github.com/sthefanypereira521-dotcom/projetos_em_python) • [LinkedIn](https://www.linkedin.com/in/sthefany-pereira-dev)
