@@ -30,7 +30,7 @@ Projeto de portfólio construído para praticar desenvolvimento backend com Pyth
 
 **Clone o repositório**
 
-git clone https://github.com/seu-usuario/sistema-bancario.git
+git clone https://github.com/sthefanypereira521-dotcom/projetos_em_python.git
 cd sistema-bancario
 
 
