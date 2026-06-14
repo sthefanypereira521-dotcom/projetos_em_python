@@ -28,21 +28,21 @@ Projeto de portfólio construído para praticar desenvolvimento backend com Pyth
 ##  Estrutura do Projeto
 
 
-sistema_bancario/
-├── main.py
-├── security.py
-├── database/
-│   └── banco.sqlite3
-├── routes/
-│   ├── auth_router.py
-│   ├── clientes.py
-│   ├── contas.py
-│   └── transacoes.py
-├── schemas/
-│   ├── cliente_schema.py
-│   ├── contas_schema.py
-│   └── transacoes_schema.py
-└── services/
+sistema_bancario/,
+├── main.py,
+├── security.py,
+├── database/,
+│   └── banco.sqlite3,
+├── routes/,
+│   ├── auth_router.py,
+│   ├── clientes.py,
+│   ├── contas.py,
+│   └── transacoes.py,
+├── schemas/,
+│   ├── cliente_schema.py,
+│   ├── contas_schema.py,
+│   └── transacoes_schema.py,
+└── services/,
 
 
 
