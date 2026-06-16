@@ -1,0 +1,350 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: mini_sistema_bancario
+meta:
+  id: wrk_cd54d835529a4096acfc69871959c9a3
+  created: 1781634928343
+  modified: 1781647628606
+  description: ""
+collection:
+  - url: http://127.0.0.1:8000/clientes/
+    name: clientes
+    meta:
+      id: req_fe93892a19264702ba5fd213e474aef9
+      created: 1781634928364
+      modified: 1781646348112
+      isPrivate: false
+      description: ""
+      sortKey: -1781634928364
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/auth/login
+    name: auth/login
+    meta:
+      id: req_24743a4a59cf4be7b59e6096a5012a7e
+      created: 1781635163382
+      modified: 1781647477694
+      isPrivate: false
+      description: ""
+      sortKey: -1781635163382
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "beatriz@gmail.com",
+          "senha": "007755"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/clientes
+    name: clientes
+    meta:
+      id: req_21923ad616f34a6cb05668ef44ddfa9a
+      created: 1781635590851
+      modified: 1781646335408
+      isPrivate: false
+      description: ""
+      sortKey: -1781635590851
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "string",
+          "email": "user@example.com",
+          "senha": "string"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/clientes/
+    name: cliente
+    meta:
+      id: req_e3e30eeec17645ed98fd19089669336a
+      created: 1781636310988
+      modified: 1781646328341
+      isPrivate: false
+      description: ""
+      sortKey: -1781636310988
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/clientes/
+    name: cliente
+    meta:
+      id: req_326d31b4351b4d6281dc25e4cd0d5573
+      created: 1781636456772
+      modified: 1781646312367
+      isPrivate: false
+      description: ""
+      sortKey: -1781636456772
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "id": 2,
+          "nome": "beatriz",
+          "email": "beatriz@gmail.com"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/contas/
+    name: contas
+    meta:
+      id: req_d053ae3f094740e9892e77fed4e2950a
+      created: 1781639732063
+      modified: 1781646303552
+      isPrivate: false
+      description: ""
+      sortKey: -1781639732063
+    method: GET
+    authentication:
+      type: bearer
+      token: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/contas/
+    name: contas{id}
+    meta:
+      id: req_4c98a5c841624da0af00a5420ee7cdea
+      created: 1781639836712
+      modified: 1781646295351
+      isPrivate: false
+      description: ""
+      sortKey: -1781639836712
+    method: GET
+    authentication:
+      type: bearer
+      token: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/contas/
+    name: contas
+    meta:
+      id: req_7d8a0a9a0b9845b791e1e68886f6c7d2
+      created: 1781640093211
+      modified: 1781646284805
+      isPrivate: false
+      description: ""
+      sortKey: -1781640093211
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "numero_conta": "string",
+          "tipo_conta": "string",
+          "saldo": 0,
+          "cliente_id": 0
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/contas
+    name: contas_id
+    meta:
+      id: req_0c8e3a390b7d49d7a324d64e7615e66a
+      created: 1781640410801
+      modified: 1781647095155
+      isPrivate: false
+      description: ""
+      sortKey: -1781640410801
+    method: DELETE
+    authentication:
+      type: bearer
+      token: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/transacoes/contas/clientes/
+    name: /transacoes/contas/clientes/
+    meta:
+      id: req_972ac824635540d1b96e639a479acd04
+      created: 1781644914977
+      modified: 1781646177566
+      isPrivate: false
+      description: ""
+      sortKey: -1781644914977
+    method: GET
+    authentication:
+      type: bearer
+      token: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/transacoes/
+    name: /transacoes/
+    meta:
+      id: req_b6674e367d5b4b45acc858128c286a6d
+      created: 1781645043184
+      modified: 1781646201358
+      isPrivate: false
+      description: ""
+      sortKey: -1781645043184
+    method: GET
+    authentication:
+      type: bearer
+      token: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/transacoes/deposito?conta_id=1&valor=20
+    name: /transacoes/deposito
+    meta:
+      id: req_6082a3dca56f44c28f19f15708ea0f8d
+      created: 1781645126317
+      modified: 1781646257222
+      isPrivate: false
+      description: ""
+      sortKey: -1781645126317
+    method: POST
+    authentication:
+      type: bearer
+      token: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/transacoes/saque?conta_id=3&valor=20
+    name: /transacoes/saque
+    meta:
+      id: req_695a02aa9b8a4d1db41533f56330d482
+      created: 1781645502613
+      modified: 1781646223585
+      isPrivate: false
+      description: ""
+      sortKey: -1781645502613
+    method: POST
+    authentication:
+      type: bearer
+      token: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_83a2ed2f71cfaa211ba30f33e835b87ab7e889f3
+    created: 1781634928356
+    modified: 1781634928356
+environments:
+  name: Base Environment
+  meta:
+    id: env_83a2ed2f71cfaa211ba30f33e835b87ab7e889f3
+    created: 1781634928349
+    modified: 1781634928349
+    isPrivate: false
