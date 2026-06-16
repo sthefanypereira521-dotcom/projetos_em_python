@@ -59,6 +59,19 @@ Authorization: Bearer <seu_token>
 Obtenha o token na rota  POST /auth/token com email e senha.
 
 
+## Testando as rotas
+
+**As rotas foram testadas com o Insomnia.**
+O arquivo `insomnia_sistema_bancario_collection.yaml` 
+está na raiz do projeto.
+
+Para importar:
+1. Abra o Insomnia
+2. Clique em Import
+3. Selecione o arquivo .yaml
+4. Todas as rotas já estarão configuradas
+
+
 
 
 ##  Autora
