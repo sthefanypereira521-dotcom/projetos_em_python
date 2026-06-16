@@ -136,3 +136,39 @@ def buscar_conta(conta_id: int,
     )
 
 
+@router.delete("/{conta_id}")
+def deletar_conta(
+    conta_id: int,
+    credenciais: HTTPAuthorizationCredentials = Depends(security)
+):
+
+    payload = verificar_token(
+        credenciais.credentials
+    )
+
+    conn = sqlite3.connect("database/banco.sqlite3")
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "SELECT * FROM contas WHERE id = ?",
+        (conta_id,)
+    )
+
+    conta = cursor.fetchone()
+
+    if not conta:
+        conn.close()
+        raise HTTPException(
+            status_code=404,
+            detail="Conta não encontrada"
+        )
+
+    cursor.execute(
+        "DELETE FROM contas WHERE id = ?",
+        (conta_id,)
+    )
+
+    conn.commit()
+    conn.close()
+
+    return {"mensagem": "Conta apagada com sucesso"}

@@ -110,7 +110,7 @@ def listar_clientes(
     ]
 
 
-@router.patch("/{cliente_id}", response_model=Cliente)
+@router.patch("/{cliente_id}", response_model=ClienteUpdate)
 def atualizar_cliente(cliente_id: int, cliente: Cliente,
                       credenciais: HTTPAuthorizationCredentials =
                       Depends(security)
@@ -131,11 +131,51 @@ def atualizar_cliente(cliente_id: int, cliente: Cliente,
         """,
                    (
 
-                       Cliente.nome,
-                       Cliente.email,
+                       cliente.nome,
+                       cliente.email,
                        cliente_id
                    )
                    )
     conn.commit()
 
-    return {"Mensagem": "Cliente atualizado"}
+    return {
+        "nome": cliente.nome,
+        "email": cliente.email
+    }
+
+
+@router.delete("/{id}")
+def deletar_cliente(
+    id: int,
+    credenciais: HTTPAuthorizationCredentials = Depends(security)
+):
+    verificar_token(credenciais.credentials)
+
+    conn = sqlite3.connect("database/banco.sqlite3")
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "SELECT id FROM clientes WHERE id = ?",
+        (id,)
+    )
+
+    cliente = cursor.fetchone()
+
+    if not cliente:
+        conn.close()
+        raise HTTPException(
+            status_code=404,
+            detail="Cliente não encontrado"
+        )
+
+    cursor.execute(
+        "DELETE FROM clientes WHERE id = ?",
+        (id,)
+    )
+
+    conn.commit()
+    conn.close()
+
+    return {
+        "mensagem": f"Cliente {id} removido com sucesso"
+    }
