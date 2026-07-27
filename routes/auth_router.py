@@ -49,4 +49,3 @@ def login(dados: Login):
         "access_token": token,
         "token_type": "bearer"
     }
-

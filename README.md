@@ -7,7 +7,7 @@ Projeto de portfólio construído para praticar desenvolvimento backend com Pyth
 
 ##  Tecnologias
 
-- Python 3.11
+- Python 3.14
 - FastAPI
 - SQLite3
 - JWT (autenticação)
